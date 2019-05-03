@@ -1,0 +1,59 @@
+header{
+    background-color: #0080FF;
+}
+h1{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+aside{
+    background-color: grey;
+    padding: 5px;
+}
+footer{
+    background-color:#0080FF;
+    padding:10px;
+    text-align:center;
+}
+h3{
+    color: white;
+}
+.color1{
+    background-color: grey;
+    padding: 8px;
+}
+form{
+    position: absolute;
+    left:50%;
+    transform: translate(-50%);
+}
+.navbar-brand{
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background-color: rgba(176, 187, 197, 0.623);
+}
+a{
+    color: black;
+}
+img.imgprincipal {
+    width:350px;
+    height:350px;
+    float: left;
+    border-radius: 200px;
+}
+.estudios{
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+img.iconos{
+    width:30px;
+    height:30px;
+    border-radius:200px;
+}
+.titulos{
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}

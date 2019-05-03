@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>visor responsivo con Leaflet</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="Demo project with jQuery">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+    crossorigin=""/>
+    <link rel="stylesheet" href="css/leaflet-sidebar.min.css" />
+
+    <style type="text/css">
+            html, body, #container {
+                    height: 100%;
+                    width: 100%;
+                    overflow: hidden;
+            }
+            body > .container-fluid {
+                    padding: 50px 0 0 0;
+            }
+            .sidebar{
+                    position: relative;
+                    height: 100%;
+                    left:0;
+                    top:0;
+                    border-bottom-width: 0 !important;
+                    border-top-width: 0 !important;
+                    border-left-width: 0 !important;
+            }
+
+            .sidebar-left{
+                    float: left;
+            }
+
+            .sidebar-right{
+                    float: right;
+            }
+            .leaflet-control-layers{
+                    width: 100%;
+            }
+
+            .leaflet-touch .leaflet-control-layers{
+                    border: 0px;
+            }
+            #mapid {
+                    display: block;
+                    width: auto;
+                    height: 100%;
+            }
+    </style>
+  </head>
+  <body>  
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Visor Cartográfico</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Inicio</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Desplegable <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="index.html">Página principal</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div id="container" class="container-fluid">
+        <div id="sidebar" class="sidebar collapsed">
+          <div class="sidebar-tabs">
+              <ul role="tablist">
+                  <li><a href="#home" role="tab"><i class="fa fa-map"></i></a></li>
+                  <li><a href="#leyenda" role="tab"><i class="fa fa-photo"></i></a></li>
+                  <li><a href="#info" role="tab"><i class="fa fa-info-circle"></i></a></li>
+                  <li><a href="#impresion" role="tab"><i class="fa fa-print"></i></a></li>
+                </ul>
+  
+              <ul role="tablist">
+                  <li><a href="#settings" role="tab"><i class="fa fa-gear"></i></a></li>
+              </ul>
+          </div>
+          <div class="sidebar-content">
+          <div class="sidebar-pane" id="home">
+              <h1 class="sidebar-header">Capas<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+              <div class="" id="control-capas">
+              </div>
+          </div>
+          <div class="sidebar-pane" id="leyenda">
+              <h1 class="sidebar-header">Leyenda<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+              <div class="" id="control-leyenda">
+              </div>
+          </div>
+          <div class="sidebar-pane" id="info">
+            <h1 class="sidebar-header">Información<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+            <br>
+            <p>En el siguiente visor cartográfico</p>  
+          </div>
+          <div class="sidebar-pane" id="impresion">
+            <h1 class="sidebar-header">Impresión<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+            <div class="" id="control-impresion">
+            </div>
+        </div>
+          <div class="sidebar-pane" id="settings">
+              <h1 class="sidebar-header">Ajustes<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+              </div>
+          </div>
+        </div>
+        <div id="mapid"></div>
+    </div>
+  </body>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+    integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+    crossorigin=""></script>
+    <script src="js/leaflet-sidebar.min.js"></script>
+    <script type="text/javascript">
+    var map = L.map ('mapid',{
+      center:[41.65, -0.85],
+      zoom: 13 
+    })
+
+    var sidebar = L.control.sidebar('sidebar').addTo(map);
+
+    var osm = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    var byn = L.tileLayer('http://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    L.geoJson(bici).addTo(map);
+
+    var baseMaps = {
+                "OpenStreetMap": osm,
+                "Blanco y negro": byn
+        };    
+    
+    var overlayMaps = {
+               "Bici Zaragoza": bici,
+               "Farmacias": geojsonLayer2
+    }
+
+    var controlCapas = L.control.layers(baseMaps, overlayMaps).addTo(map);
+    document.getElementById("control-capas").appendChild(
+    controlCapas.getContainer()
+    );
+
+    L.Control.geocoder().addTo(map);
+    </script>     
+</html>
