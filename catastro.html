@@ -120,7 +120,6 @@
           </div>
         </div>
         <div id="mapid"></div>
-    </div>
   </body>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
     crossorigin="anonymous"></script>
@@ -131,7 +130,6 @@
     <script src="js/l.control.geosearch,js"></script>
     <script src="js/l.geosearch.provider.openstreetmap.js"></script>
     <script src="js/countries.js"></script>
-    <script src="js/tramovial.js"></script>
     <script type="text/javascript">
     var map = L.map ('mapid',{
       center:[41.65, -0.85],
@@ -162,8 +160,7 @@
         };    
     
     var overlayMaps = {
-                "Paises": L.geoJson(countries),
-                "Tramo vial": L.geoJson(tramo)
+                "Paises": L.geoJson(countries)
     }
 
     var controlCapas = L.control.layers(baseMaps, overlayMaps).addTo(map);
