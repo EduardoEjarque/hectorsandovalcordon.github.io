@@ -107,7 +107,7 @@
           <div class="sidebar-pane" id="info">
             <h1 class="sidebar-header">Información<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
             <br>
-            <p>En el siguiente visor cartográfico</p>  
+            <p>En el siguiente visor cartográfico se presentan diferentes cartografías. En el apartado de Capas, podemos encontrar diferentes mapas base y, otros mapas GeoJson para superponer y poder analizar la información del municipio de Zaragoza. Los datos han sido recogidos del catálogo de Datos abiertos de Zaragoza, así como en el caso de la cartografía base, de OpenStreetMaps.</p>  
           </div>
           <div class="sidebar-pane" id="impresion">
             <h1 class="sidebar-header">Impresión<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
@@ -129,7 +129,9 @@
     <script src="js/L.timezones.js"></script>
     <script src="js/l.control.geosearch,js"></script>
     <script src="js/l.geosearch.provider.openstreetmap.js"></script>
-    <script src="js/countries.js"></script>
+    <script src="js/tranvia.js"></script>
+    <script src="js/aparcabicis.js"></script>
+    <script src="js/maparuido.js"></script>
     <script type="text/javascript">
     var map = L.map ('mapid',{
       center:[41.65, -0.85],
@@ -159,11 +161,13 @@
                 "Mapa base B&N": byn,
         };    
     
-    var overlayMaps = {
-                "Paises": L.geoJson(countries)
+    var Overlay = {
+                "Lineas y paradas Tranvía": L.geoJson(tranvia),
+                "Aparcamientos Bicis": L.geoJson(aparcabicis),
+                "Mapa de ruido 2016": L.geoJson(maparuido),
     }
 
-    var controlCapas = L.control.layers(baseMaps, overlayMaps).addTo(map);
+    var controlCapas = L.control.layers(baseMaps, Overlay).addTo(map);
     document.getElementById("control-capas").appendChild(controlCapas.getContainer()
     );
 
