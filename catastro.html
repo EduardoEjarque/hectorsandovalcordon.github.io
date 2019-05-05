@@ -69,9 +69,6 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Inicio</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Desplegable <span class="caret"></span></a>
-              <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="index.html">Página principal</a></li>
               </ul>
             </li>
@@ -147,14 +144,34 @@
       attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
+    var myStyle = {
+    "color": "#ff7800",
+    "weight": 5,
+    "opacity": 0.65
+    };
+
+    function popup(feature, layer) { 
+    if (feature.properties && feature.properties.poste) 
+    { 
+        layer.bindPopup( "<strong>"  + feature.properties.poste + "</strong><br/>"); 
+    } 
+    }
+
+    function popup2(feature, layer) { 
+    if (feature.properties && feature.properties.title) 
+    { 
+        layer.bindPopup( "<strong>"  + feature.properties.title + "</strong><br/>" + feature.properties.plazas); 
+    } 
+    }
+
     var baseMaps = {
                 "Mapa base OSM": osm,
                 "Mapa base B&N": byn,
         };    
     
     var Overlay = {
-                "Lineas y paradas Tranvía": L.geoJson(tranvia),
-                "Aparcamientos Bicis": L.geoJson(aparcabicis),
+                "Lineas y paradas Tranvía": L.geoJson(tranvia,{style: myStyle, onEachFeature: popup}),
+                "Aparcamientos Bicis": L.geoJson(aparcabicis,{onEachFeature: popup2}),
     }
 
     var controlCapas = L.control.layers(baseMaps, Overlay).addTo(map);
