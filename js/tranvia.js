@@ -1424,7 +1424,7 @@ var tranvia = {
 			},
 			"description": "",
 			"poste": 401,
-			"title": "<div align=\"center\"><font face=\"Arial\" size=\"1\"><b>CAMPUS RÃO EBRO</b></font></div>",
+			"title": "<div align=\"center\"><font face=\"Arial\" size=\"1\"><b>CAMPUS RIO EBRO</b></font></div>",
 			"link": ""
 		},
 		"geometry": {
@@ -1500,7 +1500,7 @@ var tranvia = {
 			},
 			"description": "",
 			"poste": 801,
-			"title": "<div align=\"center\"><font face=\"Arial\" size=\"1\"><b>ROSALÃA DE CASTRO</b></font></div>",
+			"title": "<div align=\"center\"><font face=\"Arial\" size=\"1\"><b>ROSALIA DE CASTRO</b></font></div>",
 			"link": ""
 		},
 		"geometry": {
@@ -1519,7 +1519,7 @@ var tranvia = {
 			},
 			"description": "",
 			"poste": 901,
-			"title": "<div align=\"center\"><font face=\"Arial\" size=\"1\"><b>MARTÃNEZ SORIA</b></font></div>",
+			"title": "<div align=\"center\"><font face=\"Arial\" size=\"1\"><b>MARTÃINEZ SORIA</b></font></div>",
 			"link": ""
 		},
 		"geometry": {
