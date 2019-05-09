@@ -143,6 +143,7 @@
     <script src="js/bundle.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="js/carrilbici.js"></script>
+    <script src="js/linea_32.js"></script>
     <script type="text/javascript">
     $(window).load(function() {
     $(".loader").fadeOut("slow");
@@ -186,6 +187,7 @@
                 "Lineas y paradas Tranvía": L.geoJson(tranvia),
                 "Aparcamientos Bicis": L.geoJson(aparcabicis,{onEachFeature: popup2}),
                 "Carril bici": L.geoJson(carrilbici),
+                "Linea 32": L.geoJson(linea32),
     }
 
     var controlCapas = L.control.layers(baseMaps, Overlay).addTo(map);

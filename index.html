@@ -1,88 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Página principal</title>
-        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="css/estilos.css">
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
-    </head>
-    <body>
-        <div class="container">
-            <header>
-                <nav class="navbar navbar-default">
-                    <div class="container-fluid">
-                        <div class="navbar header">
-                            <a href="#" class="navbar-brand">Inicio</a>
-                        </div>
-                        <ul class="nav-item dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menú</button>
-                            <div class="dropdown-menu">
-                            <a class="dropdown-item" href="catastro.html">Visor Principal</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="index.html">Inicio</a>
-                            </div>
-                        </li>
-                    </div>
-                </nav>
-            </header>
-            <div class="container">
-            <section class="main row">
-                <div class="col-xs-12 col-sm-8 col-md-4 col-lg-4"> 
-                <br>
-                    <img class="imgprincipal" src="media/fotohector.jpg" alt="fotohector">
-                <br><br><br>
-                </div>
-                <article class="col-xs-12 col-sm-2 col-md-4 col-lg-4" class="estudios">
-                    <br><br><br>
-                    <ul>
-                    <h3>Máster</h3>
-                        <li type="disc">
-                        Máster en Tecnologías de la Información:
-                        Sistemas de Información Geográfica y 
-                        Teledetección.
-                        </li>
-                    <br><br>
-                    <h3>Grado</h3>
-                        <li type="disc">
-                        Geografía y Ordenación del Territorio.
-                        </li>
-                    </ul>
-                </article>
-                <aside class="col-xs-12 col-sm-2 col-md-4 col-lg-4">
-                    <center><iframe height='300' width='300' frameborder='0' allowtransparency='true' scrolling='no' src='https://www.strava.com/athletes/39857279/latest-rides/bab98cfa2a672f1edd37cc04fbe9a4a5fc6324e8'></iframe></center>
-                    <center><iframe height='100' width='300' frameborder='0' allowtransparency='true' scrolling='no' src='https://www.strava.com/athletes/39857279/activity-summary/bab98cfa2a672f1edd37cc04fbe9a4a5fc6324e8'></iframe></center>
-                </aside>
-            </section>
-            <br>
-            <div class="row">
-                <div class="color1 col-xs-12">
-                <p>
-                <h3>Descripción</h3>
-                Especialista en Sistemas de Información Geográfica dispuesto a continuar su formación en la ciencia de datos, webmapping y programación. 
-                Amante del deporte y los viajes. Me considero una persona ambiciosa y perfeccionista en lo que hago tanto personal como profesionalmente.
-                </p>
-                </div>
-           </div>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Página Principal</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/resume.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">
+      <span class="d-block d-lg-none">Héctor Sandoval Cordón</span>
+      <span class="d-none d-lg-block">
+        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/fotohector.jpg" alt="">
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#about">Sobre mí</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#experience">Experiencia</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#education">Educación</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#skills">Habilidades</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#awards">Proyectos Personales</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container-fluid p-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
+      <div class="w-100">
+        <h1 class="mb-0">Héctor
+          <span class="text-primary">Sandoval</span>
+        </h1>
+        <div class="subheading mb-5">
+          <a href="mailto:name@email.com">hectorsandovalcordon@gmail.com</a>
         </div>
-        <div class="container"></div>
-        <br>
-            <footer>
-                <br>
-                    <div class="container">
-                            <p class="titulos">Telefono:</p>
-                            <p class="link">+34 680694054</p>
-                            <p class="titulos">Redes sociales:</p>
-                            <a href="https://www.linkedin.com/in/hectorsandovalcordon" target="_blank"><img class=iconos title=LinkedIn src="media/linkedin.png" alt="linkedin"></a>&nbsp;&nbsp;<a href="https://twitter.com/Hector02466415" target="_blank"><img class=iconos title=Twitter src="media/twitter.png" alt="twitter"></a>
-                        </div>
-                <br>
-                <marquee direction="right" id="ejemplo"><span class="Apple-style-span" style="color:black;">GRACIAS POR TU VISITA</span></marquee> <a href="javascript:void(0);"></a> <a href="javascript:void(0);"></a>
-            </footer>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>  
-        <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
-        <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
-    </body>
+        <p class="lead mb-5">Geógrafo especializado en SIG, dispuesto a continuar su formación en la ciencia de datos, webmapping y programación. Amante del deporte, los viajes y la naturaleza. Me considero una persona ambiciosa y perfeccionista en lo que hago tanto personal como profesionalmente. </p>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/hectorsandovalcordon" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/hectorsandovalcordon" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://twitter.com/Hector02466415" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://hectorsandovalcordon.github.io/catastro" target="_blank">
+            <i class="fas fa-map-marked-alt"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="experience">
+      <div class="w-100">
+        <h2 class="mb-5">Experiencia</h2>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Empleado de ventas</h3>
+            <div class="subheading mb-3">El Corte Inglés</div>
+            <p>Dependiente en sección de deportes de montaña. 
+
+              Especialización en procesos como:
+              <ul class="fa-ul mb-0">
+                  <li>
+                    <i class="fa-li fa fa-check"></i>
+                    Asesoramiento y venta al cliente</li>
+                  <li>
+                    <i class="fa-li fa fa-check"></i>
+                    Reposición y control del stock </li>
+                  <li>
+                    <i class="fa-li fa fa-check"></i>
+                    Limpieza y orden de los lineales</li>
+                  </ul></br>
+              
+              Material de esquí y snowboard, prendas de montaña, calzado de montaña y material de escalada.</p>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">Junio 2015 - Junio 2016</span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Técnico de Logística</h3>
+            <div class="subheading mb-3">Decathlon España</div>
+            <p>Técnico de logística en almacén continental. 
+
+              Especialización en procesos como:
+              <ul class="fa-ul mb-0">
+                  <li>
+                    <i class="fa-li fa fa-check"></i>
+                    Preparación de pedidos mediante picking artículo y picking bulto, entre ellos, pedidos e-commerce</li>
+                  <li>
+                    <i class="fa-li fa fa-check"></i>
+                    Cálculo y realización de reaprovisionamientos de stock ✓ Gestión de liberaciones de espacio </li>
+                  <li>
+                    <i class="fa-li fa fa-check"></i>
+                    Control de calidad de pedidos</li>
+                  <li>
+                    <i class="fa-li fa fa-check"></i>
+                    Realización y pilotaje de inventarios</li>
+                </ul></br>
+              
+              Misionado en el equipo de procesos, junto con 4-5 personas más, para gestionar y pilotar los diferentes procesos del sector de cara a optimizar la actividad diaria.</p>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">Octubre 2016 - Junio 2018</span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="education">
+      <div class="w-100">
+        <h2 class="mb-5">Educación</h2>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Grado</h3>
+            <div class="subheading mb-3">Geografía y Ordenación del Territorio</div>
+            <div>Universidad de Zaragoza</div>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">Septiembre 2013 - Junio 2017</span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
+          <div class="resume-content">
+            <h3 class="mb-0">Máster</h3>
+            <div class="subheading mb-3">Tecnologías de la Información Geográfica para la OT: SIG y Teledetección</div>
+            <div>Universidad de Zaragoza</div>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">Octubre 2018 - Junio 2019</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills">
+      <div class="w-100">
+        <h2 class="mb-5">Habilidades</h2>
+
+        <div class="subheading mb-3">Herramientas</div>
+        <ul class="list-inline dev-icons">
+          <li class="list-inline-item">
+            <i class="fab fa-html5"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="fab fa-css3-alt"></i>
+          </li>
+        </ul>
+
+        <div class="subheading mb-3">Formación</div>
+        <ul class="fa-ul mb-0">
+          <li>
+            <i class="fa-li fa fa-check"></i>
+            Diseño Web con HTML5 + CSS3 (Fundación Telefónica)</li>
+          <li>
+            <i class="fa-li fa fa-check"></i>
+            GIS aplicado a la gestión ambiental: Análisis de redes-Network analyst (Instituto Superior de Medio Ambiente)</li>
+          <li>
+            <i class="fa-li fa fa-check"></i>
+            Teledetección, fotogrametría, Lidar y ocupación del suelo (Instituto Geográfico Nacional)</li>
+          <li>
+            <i class="fa-li fa fa-check"></i>
+            Sostenibilidad Territorial: Análisis del patrimonio natural y cultural a través de ArcGIS 10.3 (Universidad de Zaragoza)</li>
+          <li>
+            <i class="fa-li fa fa-check"></i>
+            PET Preliminary English Test (Cambridge Assessment English)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="awards">
+      <div class="w-100">
+        <h2 class="mb-5">Proyectos Personales</h2>
+        <div class="social-icons">
+          <li><i class="fa-li fa fa-check"></i>
+            Desarrollo de Visor Cartográfico en la ciudad de Zaragoza &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://hectorsandovalcordon.github.io/catastro" target="_blank"><i class="fas fa-map-marked-alt"></i></a></li>
+        </ul>
+      </div>
+      <div class="social-icons">
+        <li><i class="fa-li fa fa-check"></i>
+            Trabajo Fin de Grado &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://zaguan.unizar.es/record/69546/files/TAZ-TFG-2018-133.pdf" target="_blank"><i class="fas fa-book-open"></i></a></li>
+        </ul>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/resume.min.js"></script>
+
+</body>
+
 </html>
