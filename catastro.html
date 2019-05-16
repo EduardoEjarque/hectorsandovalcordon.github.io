@@ -144,6 +144,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="js/carrilbici.js"></script>
     <script src="js/linea_32.js"></script>
+    <script src="js/paradas.js"></script>
     <script type="text/javascript">
     $(window).load(function() {
     $(".loader").fadeOut("slow");
@@ -164,19 +165,11 @@
       attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    function popup(feature, layer) { 
-      if (feature.properties && feature.properties.tranvia) 
-      { 
-        layer.bindPopup( "<strong>" + feature.properties.title + "</strong><br/>" + feature.properties.poste); 
-      } 
+    function onEachFeature(feature, layer) {
+    if (feature.properties && feature.properties.link) {
+        layer.bindPopup(feature.properties.link);
     }
-
-    function popup2(feature, layer) { 
-    if (feature.properties && feature.properties.aparcabicis) 
-    { 
-        layer.bindPopup( "<strong>"  + feature.properties.title + "</strong><br/>" + feature.properties.plazas); 
-    } 
-    }
+}
 
     var baseMaps = {
                 "Mapa base OSM": osm,
@@ -185,10 +178,11 @@
     
     var Overlay = {
                 "Lineas y paradas Tranvía": L.geoJson(tranvia),
-                "Aparcamientos Bicis": L.geoJson(aparcabicis,{onEachFeature: popup2}),
+                "Aparcamientos Bicis": L.geoJson(aparcabicis),
                 "Carril bici": L.geoJson(carrilbici),
                 "Linea 32": L.geoJson(linea32),
-    }
+                "Paradas 32": L.geoJson(paradas, {onEachFeature: onEachFeature})
+        };
 
     var controlCapas = L.control.layers(baseMaps, Overlay).addTo(map);
     document.getElementById("control-capas").appendChild(controlCapas.getContainer()
