@@ -10,9 +10,9 @@ var tranvia = {
 		"type": "Feature",
 		"properties": {
 			"style": {
-				"strokeColor": "#669d2a",
-				"strokeOpacity": "0.75",
-				"strokeWidth": "3"
+				strokeColor: "#2a9d3b",
+				strokeOpacity: "0.75",
+				strokeWidth: "3"
 			},
 			"description": "",
 			"title": "<div align=\"center\"><font face=\"Arial\" size=\"1\"><b>TranvÃ­a</b> - Sentido<i> Avenida de la Academia</i></font></div>"
