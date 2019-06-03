@@ -62,7 +62,6 @@
         var highlightLayer;
         function highlightFeature(e) {
             highlightLayer = e.target;
-
             if (e.target.feature.geometry.type === 'LineString') {
               highlightLayer.setStyle({
                 color: '#EFEB11',
@@ -108,7 +107,6 @@
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
-
         function style_postes_urbanos_0_0() {
             return {
                 pane: 'pane_postes_urbanos_0',
