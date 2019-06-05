@@ -1,14 +1,24 @@
 <!doctype html>
+<!-- Etiqueta que define la raíz del documento -->
 <html lang="en">
+    <!-- Etiqueta que define el título, metadatos y diversos enlaces -->
     <head>
+        <!-- Titulo que aparece en la pestaña de la página web -->
+        <title>Visor autobuses urbanos</title>
+
+        <!-- Metadatos de la página -->
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
+        
+        <!-- Enlaces a librerías, hojas de estilo y plugins de leaflet  -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        
+        <!-- Estilo establecido directamente desde el HTML sin enlace a un documento css de diversos objetos  -->
         <style>
-        html, body, #map {
+        html, body {
             width: 100%;
             height: 100%;
             padding: 0;
@@ -16,7 +26,9 @@
         }
         </style>
     </head>
+    <!-- Cuerpo de la página web, donde se va a mostrar el contenido al usuario  -->
     <body>
+        <!-- Barra de navegación superior de la página web con diferentes opciones para interactuar con otros html  -->
         <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -38,7 +50,7 @@
             </div>
         </div>
         </nav>
-    
+        <!-- Incorporación del video a la página web  -->
         <div>
             <video width="1500" height="900" controls>
                 <source src="video/proyecto_final.mp4" type="video/mp4">

@@ -1,16 +1,26 @@
 <!doctype html>
+<!-- Etiqueta que define la raíz del documento -->
 <html lang="en">
+    <!-- Etiqueta que define el título, metadatos y diversos enlaces -->
     <head>
+        <!-- Titulo que aparece en la pestaña de la página web -->
+        <title>Visor autobuses urbanos</title>
+
+        <!-- Metadatos de la página -->
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
+        
+        <!-- Enlaces a librerías, hojas de estilo y plugins de leaflet  -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" href="css/leaflet.css">
         <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
         <link rel="stylesheet" href="css/leaflet-search.css">
         <link rel="stylesheet" href="css/leaflet-control-geocoder.Geocoder.css">
+        
+        <!-- Estilo establecido directamente desde el HTML sin enlace a un documento css de diversos objetos  -->
         <style>
         html, body, #map {
             width: 100%;
@@ -20,7 +30,9 @@
         }
         </style>
     </head>
+    <!-- Cuerpo de la página web, donde se va a mostrar el contenido al usuario  -->
     <body>
+        <!-- Barra de navegación superior de la página web con diferentes opciones para interactuar con otros html  -->
         <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -43,9 +55,11 @@
             </div>
         </div>
         </nav>
+        <!-- Incorporación del mapa a la página web  -->
         <div id="map">
         </div>
     </body>
+    <!-- Diferentes scripts javascript de la página web bootstrap, leaflet, etc.  -->
         <script src="js/qgis2web_expressions.js"></script>
         <script src="js/leaflet.js"></script>
         <script src="js/leaflet.rotatedMarker.js"></script>
@@ -72,14 +86,14 @@
                 fillOpacity: 1
               });
             }
-        }
+        } //Variable creada para que cuando el cursos pase por encima de alguna de las paradas, se ilumine de color amarillo
         var map = L.map ('map',{
         center:[41.65, -0.88],
         zoom: 12.5
-        })
+        }) //Creación de la variable mapa
         var byn = L.tileLayer('http://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
+        }).addTo(map); //Creación de la variable de mapa base de OSM
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>');
         var bounds_group = new L.featureGroup([]);
@@ -106,7 +120,7 @@
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
-        }
+        } //Atributos y características de los popups de cada una de las paradas
         function style_postes_urbanos_0_0() {
             return {
                 pane: 'pane_postes_urbanos_0',
@@ -121,7 +135,7 @@
                 fillOpacity: 1,
                 fillColor: '#2986D4',
             }
-        }
+        } //Estilo de cada uno de los popups de las paradas
         map.createPane('pane_postes_urbanos_0');
         map.getPane('pane_postes_urbanos_0').style.zIndex = 400;
         map.getPane('pane_postes_urbanos_0').style['mix-blend-mode'] = 'normal';
@@ -136,7 +150,7 @@
                 };
                 return L.circleMarker(latlng, style_postes_urbanos_0_0(feature));
             },
-        });
+        }); //Estilos de los postes, en este caso circulares
         bounds_group.addLayer(layer_postes_urbanos_0);
         map.addLayer(layer_postes_urbanos_0);
         var osmGeocoder = new L.Control.Geocoder({
@@ -155,6 +169,6 @@
             hideMarkerOnCollapse: true,
             propertyName: 'id'}));
         document.getElementsByClassName('search-button')[0].className +=
-         ' fa fa-binoculars';
+         ' fa fa-binoculars'; //Incorporación de los diferentes buscadores de postes, callejeros...
         </script>
 </html>

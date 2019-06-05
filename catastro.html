@@ -1,13 +1,18 @@
 <!DOCTYPE html>
+<!-- Etiqueta que define la raíz del documento -->
 <html>
+  <!-- Etiqueta que define el título, metadatos y diversos enlaces -->
   <head>
+    <!-- Titulo que aparece en la pestaña de la página web -->
     <title>Visor Cartográfico</title>
 
+    <!-- Metadatos de la página -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="description" content="Demo project with jQuery">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
+    <!-- Enlaces a librerías, hojas de estilo y plugins de leaflet  -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" />
@@ -16,7 +21,9 @@
     <link rel="stylesheet" href="css/catastro.css" />
 
   </head>
+  <!-- Cuerpo de la página web, donde se va a mostrar el contenido al usuario  -->
   <body>  
+    <!-- Barra de navegación superior de la página web con diferentes opciones para interactuar con otros html  -->
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -39,6 +46,7 @@
         </div>
       </div>
     </nav>
+    <!-- Barra de navegación situada en la parte izquierda del visor para interactuar con las capas, leyenda, etc.  -->
     <div id="container" class="container-fluid">
         <div id="sidebar" class="sidebar collapsed">
           <div class="sidebar-tabs">
@@ -74,8 +82,10 @@
               </div>
           </div>
         </div>
+        <!-- Incorporación del mapa a la página web  -->
         <div id="mapid"></div>
   </body>
+    <!-- Diferentes scripts javascript de la página web bootstrap, leaflet, etc.  -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
     crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -89,18 +99,18 @@
     <script src="js/bundle.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script type="text/javascript">
-
+    
     var map = L.map ('mapid',{
       center:[41.65, -0.85],
       zoom: 13 
-    })
-    var sidebar = L.control.sidebar('sidebar').addTo(map);
+    }) //Creación de la variable mapa
+    var sidebar = L.control.sidebar('sidebar').addTo(map); //Creación de la variable sidebar (barra de interacción de la parte izquierda)
     var osm = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
     var byn = L.tileLayer('http://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
+    }).addTo(map); //Creación de variables de las dos capas base de servicio wms procedentes de OSM
 
 
     var baseMaps = {
@@ -109,12 +119,12 @@
         };    
     
     var Overlay = {
-                "Lineas y paradas Tranvía": L.geoJson(tranvia),
+                "Lineas y paradas Tranvía": L.geoJson(tranvia), 
                 "Aparcamientos Bicis": L.geoJson(aparcabicis),
-        };
-    var controlCapas = L.control.layers(baseMaps, Overlay).addTo(map);
+        }; //Incorporación de los GeoJSON tranvía y aparcabicis en formato JS a las capas de supersposición (Overlay)
+    var controlCapas = L.control.layers(baseMaps, Overlay).addTo(map); //Creación de variables control de capas para establecer cuáles van a ser capas base (WMS) y cuales de superposición (GeoJSON)
     document.getElementById("control-capas").appendChild(controlCapas.getContainer()
-    );
+    ); //Introducción de la variable controlcapas al elemento del sidebar denominado control-capas
 
     </script> 
 </html>
