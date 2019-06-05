@@ -13,4 +13,4 @@ En ella puedes encontrar diferente información acerca de mi formación, experie
 
 Adjunto el enlace a la web personal:
 
-[Pagina web de Héctor Sandoval](https://hectorsandovalcordon.github.io/)
+> [Pagina web de Héctor Sandoval](https://hectorsandovalcordon.github.io/)
