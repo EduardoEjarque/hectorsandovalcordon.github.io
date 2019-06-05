@@ -2,8 +2,13 @@
 
 Es una web basada en la biblioteca bootstrap. 
 
-En ella puedes encontrar diferente información acerca de mi formación, experiencia laboral, etc. Además, se encuentra enlazada con los diferentes proyectos personales que he desarrollado y, que estoy llevando acabo actualmente.
+En ella puedes encontrar diferente información acerca de mi formación, experiencia laboral, etc. Además, se encuentra enlazada con los diferentes proyectos personales que he desarrollado y, que estoy llevando acabo actualmente:
 
-Adjunto el enlace a la web:
+> [Parte de una etapa cicloturista en 3D elaborada mediante ArcScene] (https://hectorsandovalcordon.github.io/video)
+> [Visor de la red de autobuses urbanos en Zaragoza con Nº de poste, paradas, lineas y tiempos de espera] (https://hectorsandovalcordon.github.io/transporte.html)
+> [Visor cartográfico de la ciudad de Zaragoza con diversa información de transporte público] (https://hectorsandovalcordon.github.io/catastro.html)
+
+
+Adjunto el enlace a la web personal:
 
 [Pagina web de Héctor Sandoval](https://hectorsandovalcordon.github.io/)
