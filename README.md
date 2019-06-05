@@ -1,4 +1,4 @@
-Bienvenidos a la pagina web de Héctor Sandoval.
+<h1>Bienvenidos a la pagina web de Héctor Sandoval</h1>
 
 Es una web basada en la biblioteca bootstrap. 
 
